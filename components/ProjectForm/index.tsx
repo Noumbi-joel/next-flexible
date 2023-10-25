@@ -5,6 +5,8 @@ import React from "react";
 import Image from "next/image";
 import { Button, CustomMenu, FormField } from "..";
 import { categoryFilters } from "@/constants";
+import { createNewProject, fetchToken } from "@/lib/actions";
+import { useRouter } from "next/navigation";
 
 type Props = {
   type: string;
@@ -13,6 +15,7 @@ type Props = {
 
 function ProjectForm({ type, session }: Props) {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const router = useRouter();
 
   const [form, setForm] = React.useState({
     image: "",
@@ -23,16 +26,22 @@ function ProjectForm({ type, session }: Props) {
     category: "",
   });
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     setIsSubmitting(true);
 
+    const { token } = await fetchToken();
+
     try {
       if (type === "create") {
+        await createNewProject(form, session?.user?.id, token);
+        router.push("/");
       }
     } catch (err: any) {
-      console.log("Error while creating project: " + err);
+      console.log("Error while creating project: " + JSON.stringify(err));
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
