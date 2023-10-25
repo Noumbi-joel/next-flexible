@@ -6,9 +6,9 @@ const User = g
     name: g.string().length({ min: 2, max: 20 }),
     email: g.string().unique(),
     avatarUrl: g.url(),
-    description: g.string(),
+    description: g.string().optional(),
     githubUrl: g.url().optional(),
-    linkedInUrl: g.url().optional(),
+    linkedinUrl: g.url().optional(),
     projects: g
       .relation(() => Project)
       .list()

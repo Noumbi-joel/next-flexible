@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.17",
     "@types/jsonwebtoken": "^9.0.4",
     "cloudinary": "^1.41.0",
+    "encoding": "^0.1.13",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "jsonwebtoken": "^9.0.2",

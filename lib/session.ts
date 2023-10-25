@@ -72,7 +72,7 @@ export const authOptions: NextAuthOptions = {
 
         return true;
       } catch (error: any) {
-        console.log(error);
+        console.log("signin error: " + error);
         return false;
       }
     },
@@ -81,6 +81,5 @@ export const authOptions: NextAuthOptions = {
 
 export async function getCurrentUser() {
   const session = (await getServerSession(authOptions)) as SessionInterface;
-
   return session;
 }
