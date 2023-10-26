@@ -7,6 +7,11 @@ import ProjectForm from "./ProjectForm";
 import FormField from "./FormField";
 import CustomMenu from "./CustomMenu";
 import Button from "./Button";
+import ProjectCard from "./ProjectCard";
+import ProjectActions from "./ProjectActions";
+import RelatedProjects from "./RelatedProjects";
+import Categories from "./Categories";
+import Profile from "./ProfilePage";
 
 export {
   Navbar,
@@ -17,5 +22,10 @@ export {
   ProjectForm,
   FormField,
   CustomMenu,
-  Button
+  Button,
+  ProjectCard,
+  ProjectActions,
+  RelatedProjects,
+  Categories,
+  Profile
 };
