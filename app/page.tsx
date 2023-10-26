@@ -59,8 +59,8 @@ export default async function Home({ searchParams: { category } }: Props) {
         ))}
       </section>
 
-      <h1>Posts</h1>
-      <h1>LoadMore</h1>
+      {/* <h1>Posts</h1>
+      <h1>LoadMore</h1> */}
     </section>
   );
 }
